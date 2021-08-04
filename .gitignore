@@ -1,0 +1,3 @@
+#Java .class files and .swp files, these are byte files that don't need to be on github.
+*.class
+*.swp
