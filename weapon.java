@@ -1,12 +1,22 @@
+//import some buffer stream reader so you can read in input
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//import Scanner to read input from terminal
+import java.util.Scanner;
+
 public class weapon{
+	
+
 	// this is the class constructor
 	//these next lines are instance variables
 	String weaponName;
 	String payloadType;
-	//String payloadSize;
+	String payloadSize;
 
 	//see what happens with payloadSize when you change it too a boolean
-	boolean payloadSize = true;
+	//boolean payloadSize = true;
 	int weaponWeight;
 	
 	// next we call constructors to create objects when the class is called
@@ -42,8 +52,10 @@ public class weapon{
 	}
 	// create the main program runtime with the static void keyword
 	
-	public static void main(String []args){
-	
+	public static void main(String []args)
+		throws IOException
+		{
+		
 		//the object is created
 		//Java is case sensitive, make sure you lower case weapon, (You made it upper case before)
 		weapon gattlingGun = new weapon("Gattling Gun");
@@ -56,8 +68,32 @@ public class weapon{
 	
 		//call the method setPayloadSize where you are using the System.console() method to read in input f		   // from the terminal
 
-		gattlingGun.setPayloadSize();
+		//gattlingGun.setPayloadSize();
 		//java requires the semicolon after every line.
+		
+		//attemptiing to use BufferReader
+		//instanitate reader object as an instance of BufferedReader class
+		
+		BufferedReader reader = new BufferedReader(
+			new InputStreamReader(System.in));
+
+		System.out.println("Enter the size of the payload");
+		
+		//payloadSize must be declared here with String identifier because it must create a static version of the variable to be used in the static main program
+		String payloadSize = reader.readLine();
+
+		System.out.println(payloadSize);
+
+		System.out.println("Enter the weapon weight as an int in pounds:");
+
+		//create a new instance of the Scanner class with the scanIn object
+		Scanner scanIn = new Scanner(System.in);
+
+		//weaponWeight must be declared as a static variable since it is in the static main
+		int weaponWeight = scanIn.nextInt(); //you have to include the parenthasis because nextInt is a method of scanIn
+
+		//print the results of weaponWeight with System.out.println
+		System.out.println("You entered: " +weaponWeight+ " for weapon weight");
 	
 	}
 }
