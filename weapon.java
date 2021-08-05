@@ -3,7 +3,10 @@ public class weapon{
 	//these next lines are instance variables
 	String weaponName;
 	String payloadType;
-	int payloadSize;
+	//String payloadSize;
+
+	//see what happens with payloadSize when you change it too a boolean
+	boolean payloadSize = true;
 	int weaponWeight;
 	
 	// next we call constructors to create objects when the class is called
@@ -23,7 +26,20 @@ public class weapon{
 		payloadType = type; //in Java there has to be a semicolon after ever statement
 		System.out.println("The Payload of the" +weaponName+ ":" +payloadType);
 	}
+	
+	public void setPayloadSize(){
+		//write this method to take user input from the console.
+		// System.console() will not work in an IDE only works in interactive enviornments
+	
+		 //payloadSize = System.console().readline();
+		//System.console().readline() error method in console().readline cannot be applied to specific type
+		//required: boolean
+		//found no arguments
+		//reason: actual and formal arguemnts differ in length
 
+		System.out.println(weaponName + " weapon size: " +payloadSize);
+		
+	}
 	// create the main program runtime with the static void keyword
 	
 	public static void main(String []args){
@@ -36,7 +52,11 @@ public class weapon{
 		// you can call the method setPayloadType by refering to object.method() as done below
 
 		gattlingGun.setPayloadType("High Explosive Shell");
+		
 	
+		//call the method setPayloadSize where you are using the System.console() method to read in input f		   // from the terminal
+
+		gattlingGun.setPayloadSize();
 		//java requires the semicolon after every line.
 	
 	}
