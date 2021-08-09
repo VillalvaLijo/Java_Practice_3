@@ -37,7 +37,12 @@ public class weapon{
 		System.out.println("The Payload of the" +weaponName+ ":" +payloadType);
 	}
 	
-	public void setPayloadSize(){
+	public void setPayloadSize()
+		throws IOException
+		{
+
+		
+
 		//write this method to take user input from the console.
 		// System.console() will not work in an IDE only works in interactive enviornments
 	
@@ -47,7 +52,16 @@ public class weapon{
 		//found no arguments
 		//reason: actual and formal arguemnts differ in length
 
+
+		BufferedReader reader = new BufferedReader(
+			new InputStreamReader(System.in));
+
+		System.out.println("Enter the size of the payload");
+		
+		payloadSize = reader.readLine();
+		
 		System.out.println(weaponName + " weapon size: " +payloadSize);
+		
 		
 	}
 	// create the main program runtime with the static void keyword
@@ -74,15 +88,17 @@ public class weapon{
 		//attemptiing to use BufferReader
 		//instanitate reader object as an instance of BufferedReader class
 		
-		BufferedReader reader = new BufferedReader(
-			new InputStreamReader(System.in));
+		//BufferedReader reader = new BufferedReader(
+			//new InputStreamReader(System.in));
 
-		System.out.println("Enter the size of the payload");
+		//System.out.println("Enter the size of the payload");
 		
 		//payloadSize must be declared here with String identifier because it must create a static version of the variable to be used in the static main program
-		String payloadSize = reader.readLine();
+		//String payloadSize = reader.readLine();
 
-		System.out.println(payloadSize);
+		//System.out.println(payloadSize);
+
+		gattlingGun.setPayloadSize();
 
 		System.out.println("Enter the weapon weight as an int in pounds:");
 
