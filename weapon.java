@@ -63,6 +63,16 @@ public class weapon{
 		System.out.println(weaponName + " weapon size: " +payloadSize);
 		
 		
+	 }
+
+	public void setWeaponWeight(){
+		
+			//make a instance of scanner so you can scan in the weapon weight
+		Scanner scanIn = new Scanner(System.in);
+
+		System.out.println("Enter in the weight of the weapon in lbs:");
+
+		weaponWeight = scanIn.nextInt();		
 	}
 	// create the main program runtime with the static void keyword
 	
