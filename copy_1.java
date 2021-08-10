@@ -90,6 +90,15 @@ public class copy_1 implements Cloneable{
 		}else{
 			System.out.println("First Object and Second Object are not equivalent!");
 		}
+
+		//now test if clone is shallow copy or deep copy by changing the variables in 
+		//secondObject and seeing if they effect firstObject
+		
+		secondObject.getInt();
+
+		System.out.println("You changed secondObject num1 to: " +secondObject.num1);
+		System.out.println("Num1 of firstObject: " +firstObject.num1);
+		
 	} 
 	
 } 
