@@ -21,17 +21,66 @@ public class copy_1{
 		System.out.println("You entered " +num1+ " for the first value of the object.");	
 	}
 
+	public void getString(){
+		
+		//create an instance of Scanner too read the string input into the variable
+		
+		Scanner scanIn = new Scanner(System.in);
+
+		System.out.println("Enter a string to be stored in the first object");
+		
+		//use .nextLine method to read in the new string
+	
+		string1 = scanIn.nextLine();
+		
+		System.out.println("You entered: " +string1);	
+	}
+
+	public void getFloat(){
+		//create a new instance of scanner to read in the float
+
+		Scanner scanIn = new Scanner(System.in);
+
+		System.out.println("Enter a float to be stored in the first object:");
+
+		num2 = scanIn.nextFloat();
+		
+		//print out the num2 float to make sure it was entered in correctly.
+		System.out.println("You entered: " +num2+ " for the float");
+	}
+
 	public static void main(String []args){
 	
-	copy_1 firstObject = new copy_1();
+		copy_1 firstObject = new copy_1();
 
-	firstObject.getInt();
+		firstObject.getInt();
 
 
-	//atempting to print num1 from first object by calling it as a 
-	// value from firstObject object reference.
+		//atempting to print num1 from first object by calling it as a 
+		// value from firstObject object reference.
 
-	System.out.println("num1 from firstObject: " +firstObject.num1);
-	} 	
+		System.out.println("num1 from firstObject: " +firstObject.num1);
+	
+		firstObject.getString();
+		firstObject.getFloat();
+		
+
+		//Create a new object, of class copy_1 and copy firstObject into it.
+
+		copy_1 secondObject = new copy_1();
+
+		copy_1 secoundObject = firstObject;
+
+		//now print all the variables from the secound object to prove the got copied
+		System.out.println("Value of num1 in secondObject: "+secoundObject.num1);
+		System.out.println("Value of string1 in secondObject: "+secondObject.string1);
+		System.out.println("Value of num2 in secondObject: "+secondObject.num2);
+
+		if(secondObject==firstObject){
+			System.out.println("Fisrt Object and Second Object are equivalent!");
+		}else{
+			System.out.println("First Object and Second Object are not equivalent!");
+		}
+	} 
 	
 } 
