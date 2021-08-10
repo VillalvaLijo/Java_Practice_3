@@ -49,7 +49,13 @@ public class copy_1{
 		System.out.println("You entered: " +num2+ " for the float");
 	}
 
-	public static void main(String []args){
+		//Object to allow cloning of other objects in this class
+	
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+	}
+	
+	public static void main(String []args) throws CloneNotSupportedException {
 	
 		copy_1 firstObject = new copy_1();
 
@@ -67,12 +73,15 @@ public class copy_1{
 
 		//Create a new object, of class copy_1 and copy firstObject into it.
 
-		copy_1 secondObject = new copy_1();
+		//copy_1 secondObject = new copy_1();
 
-		copy_1 secoundObject = firstObject;
+		//copy_1 secoundObject = firstObject;
+
+		//Attmept to use cloning on firstObject to create a clone called secondObject
+		copy_1 secondObject =(copy_1)firstObject.clone();
 
 		//now print all the variables from the secound object to prove the got copied
-		System.out.println("Value of num1 in secondObject: "+secoundObject.num1);
+		System.out.println("Value of num1 in secondObject: "+secondObject.num1);
 		System.out.println("Value of string1 in secondObject: "+secondObject.string1);
 		System.out.println("Value of num2 in secondObject: "+secondObject.num2);
 
