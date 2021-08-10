@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class copy_1{
+public class copy_1 implements Cloneable{
 	
 	int num1;
 	String string1;
